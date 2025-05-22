@@ -1,0 +1,72 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { LucideImage, LucideFileText, Menu, Search } from "lucide-react";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <nav className="bg-white shadow sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold text-indigo-800">ImagePDFTools</div>
+          <div className="hidden md:flex items-center gap-4">
+            <input
+              type="text"
+              placeholder="Search tools..."
+              className="px-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-2xl">
+              Login
+            </Button>
+          </div>
+          <div className="md:hidden">
+            <Menu className="w-6 h-6 text-indigo-800" />
+          </div>
+        </div>
+      </nav>
+
+      <header className="max-w-7xl mx-auto text-center py-10 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-indigo-800 mb-4">
+          Powerful Image & PDF Tools
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 mb-6">
+          Edit, convert, compress, and manage images & PDFs with ease.
+        </p>
+        <Button className="px-6 py-3 text-lg rounded-2xl shadow-md bg-indigo-600 hover:bg-indigo-700 text-white">
+          Explore Tools
+        </Button>
+      </header>
+
+      <main className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <ToolCard icon={<LucideImage className="w-10 h-10 text-indigo-600" />} title="Image Compressor" desc="Reduce image file size without losing quality." />
+        <ToolCard icon={<LucideImage className="w-10 h-10 text-indigo-600" />} title="Image Converter" desc="Convert images to various formats (JPG, PNG, WEBP, etc)." />
+        <ToolCard icon={<LucideFileText className="w-10 h-10 text-indigo-600" />} title="PDF Merger" desc="Combine multiple PDFs into one seamless document." />
+        <ToolCard icon={<LucideFileText className="w-10 h-10 text-indigo-600" />} title="PDF to Image" desc="Convert your PDF pages into high-quality images." />
+        <ToolCard icon={<LucideImage className="w-10 h-10 text-indigo-600" />} title="Background Remover" desc="Remove background from images in a click." />
+        <ToolCard icon={<LucideFileText className="w-10 h-10 text-indigo-600" />} title="PDF Compressor" desc="Shrink PDF file size for easier sharing." />
+      </main>
+
+      <footer className="max-w-7xl mx-auto text-center mt-20 text-gray-500 text-sm py-6">
+        © {new Date().getFullYear()} ImagePDFTools. All rights reserved.
+      </footer>
+    </div>
+  );
+}
+
+function ToolCard({ icon, title, desc }) {
+  return (
+    <Card className="rounded-2xl shadow hover:shadow-lg transition duration-200 bg-white">
+      <CardContent className="p-6">
+        <div className="mb-4 flex items-center justify-center">
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-indigo-800 mb-2 text-center">
+          {title}
+        </h3>
+        <p className="text-gray-600 text-center text-sm">
+          {desc}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
