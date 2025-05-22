@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimize your PDFs with different compression levels. Upload and compress PDF files to reduce size for better performance.">
+    <meta name="keywords" content="PDF compression, reduce PDF size, online PDF tool, compress PDF online">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Online PDF Compression Tool">
+    <meta property="og:description" content="Compress your PDFs with various levels of compression to save space and improve load times.">
+    <meta property="og:image" content="image_url_here.jpg">
+    <meta property="og:url" content="your_website_url_here">
+    <title>PDF Compression Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Container for the whole content */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+
+        /* Section Styles */
+        h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .upload-section, .compression-settings, .compress-button, .result-section, .ads-section {
+            margin-bottom: 30px;
+        }
+
+        /* File Input and Select Button Styles */
+        input[type="file"], select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        input[type="file"]:hover, select:hover {
+            border-color: #4CAF50;
+        }
+
+        /* Compress Button Styling */
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Adsense Section */
+        .adsense {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Hidden by default - for the download link */
+        .hidden {
+            display: none;
+        }
+
+        /* Download Link */
+        #download-link {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        #download-link:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styling */
+        footer {
+            font-size: 14px;
+            color: #777;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            input[type="file"], select {
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        document.getElementById("compress-btn").addEventListener("click", function() {
+            const fileInput = document.getElementById("pdf-file");
+            const compressionLevel = document.getElementById("compression-level").value;
+
+            if (fileInput.files.length === 0) {
+                alert("Please select a PDF file to compress.");
+                return;
+            }
+
+            // Simulating the compression process (replace with real backend logic)
+            const formData = new FormData();
+            formData.append("pdf", fileInput.files[0]);
+            formData.append("compression", compressionLevel);
+
+            setTimeout(() => {
+                alert("PDF Compressed Successfully!");
+
+                // Show the download link (replace with actual file URL)
+                const downloadLink = document.getElementById("download-link");
+                downloadLink.href = "#"; // Actual compressed PDF link here
+                downloadLink.classList.remove("hidden");
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Section for Branding or Introduction -->
+    <header>
+        <h1>PDF Compression Tool</h1>
+        <p>Compress your PDFs online with different compression levels to save storage space and improve website performance.</p>
+    </header>
+
+    <!-- Main Container for PDF Upload and Compression Settings -->
+    <main class="container">
+        <section class="upload-section">
+            <h2>Select a PDF to Compress</h2>
+            <input type="file" id="pdf-file" accept="application/pdf" />
+        </section>
+
+        <!-- Compression Level Selection -->
+        <section class="compression-settings">
+            <h2>Select Compression Level</h2>
+            <select id="compression-level">
+                <option value="low">Low Compression (Quality Preserved)</option>
+                <option value="medium">Medium Compression (Balanced Quality)</option>
+                <option value="high">High Compression (Quality Reduced)</option>
+            </select>
+        </section>
+
+        <!-- Compression Button -->
+        <section class="compress-button">
+            <button id="compress-btn">Compress PDF</button>
+        </section>
+
+        <!-- Space for Advertisements -->
+        <section class="ads-section">
+            <!-- Google AdSense Placeholder -->
+            <div class="adsense">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="your-ad-client-id"
+                     data-ad-slot="your-ad-slot-id"
+                     data-ad-format="auto"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+
+        <!-- Output Section for Resulting Compressed PDF -->
+        <section class="result-section">
+            <h2>Download Compressed PDF</h2>
+            <a id="download-link" href="#" class="hidden">Download Compressed PDF</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 PDF Compression Tool. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
